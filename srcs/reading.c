@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   reading.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/22 15:35:42 by ealbert           #+#    #+#             */
-/*   Updated: 2016/01/19 17:38:48 by ealbert          ###   ########.fr       */
+/*   Created: 2016/01/19 15:45:50 by ealbert           #+#    #+#             */
+/*   Updated: 2016/01/19 17:36:04 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
+#include "fillit.h"
 
-# define FILLIT_H
-# define BUFFER_SIZE 20
-# define LETTER 65
-
-#include "libft.h"
-#include <fcntl.h>
-
-typedef struct			s_triminos
+void	ft_read_file(int fd)
 {
-	char				*piece;
-	int					letter;
-	struct s_triminos	*next;
-}						t_triminos;
-#endif
+	char	buf[BUFFER_SIZE + 1];
+	int		ret;
+
+	while (read(fd, &buf, BUFFER_SIZE) == 20)
+	{
+		buf[ret] = '\0';
+		if (!valid_line(str))
+			ft_error();
+	}
+}

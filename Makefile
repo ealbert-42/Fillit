@@ -6,7 +6,7 @@
 #    By: ealbert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/14 14:46:35 by ealbert           #+#    #+#              #
-#    Updated: 2015/12/28 16:34:51 by ealbert          ###   ########.fr        #
+#    Updated: 2016/01/19 17:38:15 by ealbert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,11 @@
 
 COMPIL = gcc -Wall -Wextra -Werror -I ./includes/ -o fillit
 
-SRC = srcs/fi_main.c \
-	  srcs/libft.a
+SRC = srcs/main.c \
+	  srcs/libft.a \
+	  srcs/error.c \
+	  srcs/reading.c \
+	  srcs/valid_file.c
 
 all :
 	make -C ./libft
