@@ -1,0 +1,21 @@
+TRAVAIL TERMINE :
+
+›Récupérer le fichier en entrée du programme.
+›Lire le fichier
+›Gestion des erreurs suivantes :
+--Il n'y pas de fichier passés en paramètre.
+--Il y a un problème d'ouverture du fichier.
+
+TRAVAIL EN COURS :
+
+›Vérification de la validité du fichier d'entrée. // Plus qu'à vérifier si ça marche.
+›Enregistrer les Tetriminos dans une liste chaînée.
+
+TRAVAIL A FAIRE :
+
+›Algorithme de résolution du Fillit.
+›Placer les Tetriminos en haut à gauche dans les tableaux à deux dimensions des listes chaînées.
+›Remplacer les diez.
+›Gestion des erreurs suivantes :
+--Le fichier est invalide.
+--Il y a trop de Tetriminos.
