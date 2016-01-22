@@ -6,38 +6,17 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:56:50 by ealbert           #+#    #+#             */
-/*   Updated: 2016/01/19 17:35:59 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/01/22 12:58:05 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include <stdio.h>
 
-int		valid_char(char c)
+int		nb_diez(char *s, int i)
 {
-	if (c == '#' || c == '.')
+	if (s[i + 1] == 35 || s[i - 1] == 35 || s[i + 5] == 35 || s[i - 5] == 35)
 		return (1);
-	return (0);
-}
-
-int		valid_line(char *str, int *nbdiez)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\n')
-	{
-		if (!valid_char(str) || i == 4)
-				return (0);
-		if (str[i] == '#')
-		{
-			if (str[i + 1] == '#' || str[i + 5] == '#' || nbdiez == 3)
-				nbdiez++;
-			else
-				return (0);
-		}
-		i++;
-	}
-	return (1);
+	return (-42);
 }
 
 int		valid_string(char *str)
@@ -46,17 +25,20 @@ int		valid_string(char *str)
 	int		nbdiez;
 	int		line;
 
-	line = 1;
+	line = 0;
 	i = 0;
 	nbdiez = 0;
 	while (str[i] != '\0')
 	{
-		if (!valid_line(&str[i], &nbdiez))
+		if (str[i] == '\n')
+			line++;
+		else if (str[i] == '#')
+			nbdiez += nb_diez(str, i);
+		else if (str[i] != '.')
 			return (0);
-		if (nbdiez > 4 || line == 5)
-			return (0);
-		i += 5;
-		line++;
+		i++;
 	}
+	if (i != 20 || nbdiez != 4 || line != 4)
+		return (0);
 	return (1);
 }
