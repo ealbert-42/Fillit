@@ -2,13 +2,15 @@ TRAVAIL TERMINE :
 
 ›Récupérer le fichier en entrée du programme.
 ›Lire le fichier
+›Vérification de la validité du fichier d'entrée.
+›Calculer la taille de la map initiale en fonction du nombre de tetriminos.
 ›Gestion des erreurs suivantes :
 --Il n'y pas de fichier passés en paramètre.
 --Il y a un problème d'ouverture du fichier.
+--Le fichier est invalide.
 
 TRAVAIL EN COURS :
 
-›Vérification de la validité du fichier d'entrée. // Plus qu'à vérifier si ça marche.
 ›Enregistrer les Tetriminos dans une liste chaînée.
 
 TRAVAIL A FAIRE :
