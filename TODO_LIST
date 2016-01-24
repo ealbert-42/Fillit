@@ -4,6 +4,8 @@ TRAVAIL TERMINE :
 ›Lire le fichier
 ›Vérification de la validité du fichier d'entrée.
 ›Calculer la taille de la map initiale en fonction du nombre de tetriminos.
+›Affichage de la map après résolution.
+›Initialisation de la map.
 ›Gestion des erreurs suivantes :
 --Il n'y pas de fichier passés en paramètre.
 --Il y a un problème d'ouverture du fichier.
@@ -11,11 +13,11 @@ TRAVAIL TERMINE :
 
 TRAVAIL EN COURS :
 
+›Algorithme de résolution du Fillit.
 ›Enregistrer les Tetriminos dans une liste chaînée.
 
 TRAVAIL A FAIRE :
 
-›Algorithme de résolution du Fillit.
 ›Placer les Tetriminos en haut à gauche dans les tableaux à deux dimensions des listes chaînées.
 ›Remplacer les diez.
 ›Gestion des erreurs suivantes :
