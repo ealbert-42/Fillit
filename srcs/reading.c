@@ -16,11 +16,18 @@ void	ft_read_file(int fd)
 {
 	char	buf[BUFFER_SIZE + 1];
 	int		ret;
+	int		tetri;
+	char	buf2[2];
 
+	tetri = 0;
 	while (read(fd, &buf, BUFFER_SIZE) == 20)
 	{
 		buf[ret] = '\0';
-		if (!valid_line(str))
+		if (!valid_string(str) || tetri > 25)
 			ft_error();
+		save_tetri(str);
+		tetri++;
+		if (!read(fd, &buf2, 1))
+			break ;
 	}
 }
