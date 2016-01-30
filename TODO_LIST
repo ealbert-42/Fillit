@@ -3,7 +3,6 @@ TRAVAIL TERMINE :
 ›Récupérer le fichier en entrée du programme. (Ficher : "new_main.c")
 ›Vérification de la validité du fichier d'entrée. (Fichier : "valid_file.c")
 ›Calculer la taille de la map initiale en fonction du nombre de tetriminos.
-›Enregistrer les Tetriminos dans une liste chaînée. (Fichier : je connais pas le nom)
 ›Initialisation de la map. ("Fichiers : "map_size.c")
 ›Gestion des erreurs suivantes : (Fichier : "error.c")
 --Il n'y pas de fichier passés en paramètre. ("new_main.c")
@@ -15,6 +14,7 @@ TRAVAIL EN COURS :
 ›Affichage de la map après résolution. (Fichier : "print_map.c") // A revoir
 ›Algorithme de résolution du Fillit. (Fichier : "algo.c") // A tester.
 ›Lire le fichier (Fichier : "reading.c") // A compléter.
+›Enregistrer les Tetriminos dans une liste chaînée. (Fichier : je connais pas le nom)
 
 TRAVAIL A FAIRE :
 
