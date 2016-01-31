@@ -12,8 +12,17 @@
 
 #include "fillit.h"
 
-void	ft_error(void)
+void	ft_error(int n)
 {
-	ft_putendl_fd("error", 2);
+	if (n == 0)
+		ft_putendl_fd("Error: Too many arguments\n", 2);
+	else if (n == 1)
+		ft_putendl_fd("Error: Read Error\n", 2);
+	else if (n == 2)
+		ft_putendl_fd("Error: Invalid Input File\n", 2);
+	else if (n == 3)
+		ft_putendl_fd("Error: Malloc Error\n", 2);
+	else if (n == 4)
+		ft_putendl_fd("Error: Could not solve!\n", 2);
 	exit(EXIT_FAILURE);
 }

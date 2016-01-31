@@ -19,14 +19,14 @@ int		main(int argc, char **argv)
 	char 		**map;
 
 	if (argc != 2)
-		ft_error();
+		ft_error(0);
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
-		ft_error();
+		ft_error(1);
 	t = ft_read_file(fd); //read and save trimmed tetri to list and return pointer to beginlist
 	map = ft_generate_map();
 	if (ft_algo(map, t) == 1)
 		ft_print_map(map);
 	else
-		ft_error();
+		ft_error(4);
 	return (0);
 }

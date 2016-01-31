@@ -26,7 +26,7 @@ t_triminos	*ft_read_file(int fd)
 	{
 		buf[ret] = '\0';
 		if (!valid_string(str) || tetri > 25)
-			ft_error();
+			ft_error(2);
 		t1 = ft_save_tetri(t1, ft_trim_tetri(str), tetri + 65);
 		tetri++;
 		read(fd, &buf2, 1);
