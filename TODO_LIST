@@ -1,25 +1,23 @@
 TRAVAIL TERMINE :
 
-›Récupérer le fichier en entrée du programme.
-›Lire le fichier
-›Vérification de la validité du fichier d'entrée.
+›Récupérer le fichier en entrée du programme. (Ficher : "new_main.c")
+›Vérification de la validité du fichier d'entrée. (Fichier : "valid_file.c")
 ›Calculer la taille de la map initiale en fonction du nombre de tetriminos.
-›Affichage de la map après résolution.
-›Initialisation de la map.
-›Gestion des erreurs suivantes :
---Il n'y pas de fichier passés en paramètre.
---Il y a un problème d'ouverture du fichier.
---Le fichier est invalide.
+›Initialisation de la map. ("Fichiers : "map_size.c")
+›Gestion des erreurs suivantes : (Fichier : "error.c")
+--Il n'y pas de fichier passés en paramètre. ("new_main.c")
+--Il y a un problème d'ouverture du fichier. ("new_main.c")
+--Le fichier est invalide. ("valid_file.c")
 
 TRAVAIL EN COURS :
 
-›Algorithme de résolution du Fillit.
-›Enregistrer les Tetriminos dans une liste chaînée.
+›Affichage de la map après résolution. (Fichier : "print_map.c") // A revoir
+›Algorithme de résolution du Fillit. (Fichier : "algo.c") // A tester.
+›Lire le fichier (Fichier : "reading.c") // A compléter.
+›Enregistrer les Tetriminos dans une liste chaînée. (Fichier : je connais pas le nom)
 
 TRAVAIL A FAIRE :
 
-›Placer les Tetriminos en haut à gauche dans les tableaux à deux dimensions des listes chaînées.
-›Remplacer les diez.
 ›Gestion des erreurs suivantes :
---Le fichier est invalide.
 --Il y a trop de Tetriminos.
+›Gérer les lettres de chaque Tetriminos.

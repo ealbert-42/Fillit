@@ -21,10 +21,15 @@
 
 typedef struct			s_triminos
 {
-	char				**piece;
 	int					letter;
-	int					xcoor;
-	int					ycoor;
+	int					xcoor1;
+	int					ycoor1;
+	int					xcoor2;
+	int					ycoor2;
+	int					xcoor3;
+	int					ycoor3;
+	int					xcoor4;
+	int					ycoor4;
 	struct s_triminos	*next;
 }						t_triminos;
 
