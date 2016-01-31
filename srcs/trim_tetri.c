@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-//DEBUG: #include <stdio.h> //REMOOOOOOOOOOOOOOOOOOVE!!!!!!!!!!!!!!!!!!!!!!!!!!
+#include "fillit"
 
 static int 	ft_emptycol(char *input, int i)
 {
@@ -76,32 +75,3 @@ char 	**trim_tetri(char *input)
 	matrix = ft_strsplit(input, '\n');
 	return (matrix);
 }
-
-/*int 	main()
-{
-	char 	**print;
-	char	*str;
-	int 	i = 0;
-
-//	str = ft_strdup("....n..##n..#.n..#.nn"); 
-//	str = ft_strdup("....n....n..##n..##nn");
-//	str = ft_strdup("####n....n....n....nn");
-//	str = ft_strdup("....n....n##..n##..nn");
-//	str = ft_strdup(".##.n..##n....n....nn");
-	str = ft_strdup("....n.##.n##..n....nn");
-
-
-//	trim_tetri(str);
-
-	print = trim_tetri(str);
-	while (print[i] != NULL)
-	{
-		while (print[i])
-		{
-			printf("%s\n", print[i]);
-			i++;
-		}
-	}
-
-	return (0);
-}*/

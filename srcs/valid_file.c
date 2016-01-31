@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "fillit.h"
 
-int		nb_diez(char *s, int i)
+static int	ft_nb_diez(char *s, int i)
 {
 	if (s[i + 1] == 35 || s[i - 1] == 35 || s[i + 5] == 35 || s[i - 5] == 35)
 		return (1);
 	return (-42);
 }
 
-int		valid_string(char *str)
+int			valid_string(char *str)
 {
 	int		i;
 	int		nbdiez;
@@ -33,7 +33,7 @@ int		valid_string(char *str)
 		if (str[i] == '\n')
 			line++;
 		else if (str[i] == '#')
-			nbdiez += nb_diez(str, i);
+			nbdiez += ft_nb_diez(str, i);
 		else if (str[i] != '.')
 			return (0);
 		i++;
