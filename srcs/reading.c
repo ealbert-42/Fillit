@@ -27,7 +27,9 @@ void	ft_read_file(int fd)
 			ft_error();
 		save_tetri(str);
 		tetri++;
-		if (!read(fd, &buf2, 1))
+		read(fd, &buf2, 1);
+		buf2[ret] = '\0';
+		if (buf2[0] != '\n')
 			break ;
 	}
 }
