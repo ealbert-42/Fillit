@@ -16,7 +16,7 @@ int		main(int argc, char **argv)
 {
 	int			fd;
 	t_triminos	*t;
-	char 		**map;
+	t_map 		*map;
 	int			map_limit;
 	
 	if (argc != 2)
