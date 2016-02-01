@@ -22,14 +22,14 @@
 typedef struct			s_triminos
 {
 	int					letter;
-	int					xcoor1;
-	int					ycoor1;
-	int					xcoor2;
-	int					ycoor2;
-	int					xcoor3;
-	int					ycoor3;
-	int					xcoor4;
-	int					ycoor4;
+	int					x1;
+	int					y1;
+	int					x2;
+	int					y2;
+	int					x3;
+	int					y3;
+	int					x4;
+	int					y4;
 	struct s_triminos	*next;
 }						t_triminos;
 
