@@ -12,20 +12,47 @@
 
 #include "fillit.h"
 
-char 	**ft_generate_map()
+t_map	*ft_generate_map(t_triminos *t1)
 {
 	int		i;
+	t_map	*map;
 	
 	i = 0;
-	map = (char **)malloc(sizeof(char *) * 12);
-	if (!map)
-		ft_error(3)
+	if (!(map = (t_map *)malloc(sizeof(t_map))))
+		ft_error(3);
+	if (!(map->map = (char **)malloc(sizeof(char *) * 12)))
+		ft_error(3);
 	while (i != 12)
 	{
-		map[i] = ft_strdup("............");
-		if (!map[i])
+		if (!(map->map[i] = ft_strdup("............")))
 			ft_error(3);
 		i++;
 	}
+	map->position = 0;
+	map->maxsize = ft_map_init(t1);
 	return (map);
+}
+
+#include "fillit.h"
+
+int		ft_map_init(t_triminos *t1)
+{
+	int		i;
+	int		j;
+	t_triminos	*tmp;
+	
+	tmp = t1;
+	i = 0;
+	j = 2;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	i *= 4;
+	while (j * j < i)
+	{
+		j++;
+	}
+	return (j);
 }
