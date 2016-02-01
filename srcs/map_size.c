@@ -16,12 +16,14 @@ int		map_init(t_triminos *t1)
 {
 	int		i;
 	int		j;
-
+	t_triminos	*tmp;
+	
+	tmp = t1;
 	i = 0;
 	j = 2;
-	while (t1)
+	while (tmp)
 	{
-		t1 = t1->next;
+		tmp = tmp->next;
 		i++;
 	}
 	i *= 4;
