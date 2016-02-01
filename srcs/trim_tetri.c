@@ -14,7 +14,8 @@
 
 static int 	ft_emptycol(char *input, int i)
 {
-	if (input[i] == '.' && input[i + 5] == '.' && input[i + 10] == '.' && input[i + 15] == '.')
+	if (input[i] == '.' && input[i + 5] == '.' && input[i + 10] == '.'
+		&& input[i + 15] == '.')
 		return (1);
 	else
 		return (0);
