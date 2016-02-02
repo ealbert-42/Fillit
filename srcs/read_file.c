@@ -6,11 +6,12 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 12:16:28 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/02 12:48:11 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/02 13:24:41 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
 t_triminos	*ft_read_file(int fd)
 {
@@ -34,6 +35,7 @@ t_triminos	*ft_read_file(int fd)
 		buf2[ret] = '\0';
 		if (buf2[0] != '\n')
 			break ;
+		t1 = t1->next;
 	}
 	return (t1);
 }

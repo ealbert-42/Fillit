@@ -6,7 +6,7 @@
 /*   By: ealbert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:08:32 by ealbert           #+#    #+#             */
-/*   Updated: 2015/11/30 20:39:38 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/01/18 11:34:41 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

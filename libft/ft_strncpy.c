@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:19:11 by ealbert           #+#    #+#             */
-/*   Updated: 2015/12/03 16:21:38 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/01/18 11:38:00 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	int		i;
+	char	*s;
 
-	i = 0;
-	ft_memset(dst, '\0', n);
-	while (src[i] != '\0' && i < n)
+	s = dst;
+	while (n > 0 && *src != '\0')
 	{
-		dst[i] = src[i];
-		i++;
+		*s = *src;
+		s++;
+		src++;
+		n--;
 	}
-	dst[i] = '\0';
+	while (n > 0)
+	{
+		*s = '\0';
+		s++;
+		n--;
+	}
 	return (dst);
 }
