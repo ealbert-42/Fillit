@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reading.c                                          :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/19 15:45:50 by ealbert           #+#    #+#             */
-/*   Updated: 2016/01/19 17:36:04 by ealbert          ###   ########.fr       */
+/*   Created: 2016/02/02 12:16:28 by ealbert           #+#    #+#             */
+/*   Updated: 2016/02/02 12:48:11 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,18 @@ t_triminos	*ft_read_file(int fd)
 
 	t1 = NULL;
 	tetri = 0;
-	while (read(fd, &buf, BUFFER_SIZE) == 20)
+	ret = 0;
+	while ((ret = read(fd, &buf, BUFFER_SIZE)) == 20)
 	{
 		buf[ret] = '\0';
-		if (!valid_string(str) || tetri > 25)
+		if (!ft_valid_string(buf) || tetri > 25)
 			ft_error(2);
-		t1 = ft_save_tetri(t1, ft_trim_tetri(str), tetri + 65);
+		t1 = ft_save_tetri(t1, ft_trim_tetri(buf), tetri + 65);
 		tetri++;
-		read(fd, &buf2, 1);
+		ret = read(fd, &buf2, 1);
 		buf2[ret] = '\0';
 		if (buf2[0] != '\n')
-			break;
+			break ;
 	}
 	return (t1);
 }

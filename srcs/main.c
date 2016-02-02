@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:40:42 by ealbert           #+#    #+#             */
-/*   Updated: 2016/01/19 15:46:26 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/02 12:48:19 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@ int		main(int argc, char **argv)
 {
 	int			fd;
 	t_triminos	*t;
-	t_map 		*map;
-	
+	t_map		*map;
+
 	if (argc != 2)
 		ft_error(0);
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
 		ft_error(1);
-	t = ft_read_file(fd); //read and save trimmed tetri to list and return pointer to beginlist
+	t = ft_read_file(fd);
 	close(fd);
 	map = ft_generate_map(t);
-	if (ft_algo(map, t) == 1)
-		ft_print_map(map);
-	else
-		ft_error(4);
+	while (map->maxsize != 13)
+	{
+		if (ft_algo(map, t) == 1)
+		{
+			ft_putendl("Bravo");
+			return (0);
+		}
+		map->maxsize++;
+	}
+	ft_error(4);
 	return (0);
 }

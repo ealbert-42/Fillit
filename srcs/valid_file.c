@@ -6,11 +6,12 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:56:50 by ealbert           #+#    #+#             */
-/*   Updated: 2016/01/22 12:58:05 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/02 12:29:18 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+//#include "fillit.h"
+#include <stdio.h>
 
 static int	ft_nb_diez(char *s, int i)
 {
