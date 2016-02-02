@@ -6,13 +6,13 @@
 /*   By: shill <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 13:52:12 by shill             #+#    #+#             */
-/*   Updated: 2016/01/21 13:52:29 by shill            ###   ########.fr       */
+/*   Updated: 2016/02/02 13:19:31 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit"
+#include "fillit.h"
 
-static int 	ft_emptycol(char *input, int i)
+static int	ft_emptycol(char *input, int i)
 {
 	if (input[i] == '.' && input[i + 5] == '.' && input[i + 10] == '.'
 		&& input[i + 15] == '.')
@@ -21,12 +21,12 @@ static int 	ft_emptycol(char *input, int i)
 		return (0);
 }
 
-static int 	ft_emptyline(char *input, int i)
+static int	ft_emptyline(char *input, int i)
 {
-	int 	ret;
-	
+	int		ret;
+
 	ret = 1;
-	while (input[i] != '\n') 
+	while (input[i] != '\n')
 	{
 		if (input[i] != '.')
 			ret = 0;
@@ -37,7 +37,7 @@ static int 	ft_emptyline(char *input, int i)
 
 static char	*ft_trimline(char *input)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	while (input[i])
@@ -55,11 +55,11 @@ static char	*ft_trimline(char *input)
 	return (input);
 }
 
-char 	**trim_tetri(char *input)
+char		**ft_trim_tetri(char *input)
 {
-	int 	i;
+	int		i;
 	char	**matrix;
-	
+
 	i = 0;
 	while (input[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: ealbert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 11:26:42 by ealbert           #+#    #+#             */
-/*   Updated: 2015/12/02 18:28:50 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/01/18 11:34:53 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int			ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	j = i;
 	i = 0;
-	while(dst[i] && i < size)
+	while (dst[i] && i < size)
 		i++;
 	if (i < size)
 		j = j + i;

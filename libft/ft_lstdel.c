@@ -6,7 +6,7 @@
 /*   By: ealbert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 17:29:41 by ealbert           #+#    #+#             */
-/*   Updated: 2015/12/03 11:59:36 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/01/18 11:38:13 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 		list = next;
 	}
 	*alst = NULL;
-}	
+}
