@@ -19,7 +19,7 @@ static int	ft_nb_diez(char *s, int i)
 	return (-42);
 }
 
-int			valid_string(char *str)
+int			ft_valid_string(char *str)
 {
 	int		i;
 	int		nbdiez;

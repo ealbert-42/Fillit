@@ -17,8 +17,12 @@ COMPIL = gcc -Wall -Wextra -Werror -I ./includes/ -o fillit
 SRC = srcs/main.c \
 	  srcs/libft.a \
 	  srcs/error.c \
-	  srcs/reading.c \
-	  srcs/valid_file.c
+	  srcs/read_file.c \
+	  srcs/valid_file.c \
+	  srcs/main.c \
+	  srcs/generate_map.c \
+	  srcs/algo.c \
+	  srcs/trim_tetri.c \
 
 all :
 	make -C ./libft
