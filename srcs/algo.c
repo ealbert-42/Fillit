@@ -6,7 +6,7 @@
 /*   By: shill <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/31 19:15:17 by shill             #+#    #+#             */
-/*   Updated: 2016/02/02 12:14:29 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/02 15:24:06 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void		ft_writeblock(t_map *map, t_triminos *t, int position)
 	int		y;
 
 ft_putendl("writeblock");
-	
+
 	x = position % map->maxsize;
 	y = position / map->maxsize;
 	map->map[x + t->x1][y + t->y1] = t->letter;
@@ -61,10 +61,10 @@ ft_putendl("clearblock");
 
 int				ft_algo(t_map *map, t_triminos *t)
 {
-	int 	position;
+	int		position;
 
 ft_putendl("algo");
-	
+
 	position = 0;
 	while (t != NULL)
 	{

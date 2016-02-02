@@ -6,28 +6,25 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:40:42 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/02 13:24:35 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/02 16:27:54 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-
 static void	ft_print_map(char **map)
 {
-	int 	i;
-	
+	int		i;
+
 	i = 0;
-	
 	while (map[i])
 	{
 		ft_putendl(map[i]);
 		i++;
 	}
-	
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	int			fd;
 	t_triminos	*t;
