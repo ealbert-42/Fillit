@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 static t_triminos	*ft_save_it(t_triminos *t2, int i, int j)
 {

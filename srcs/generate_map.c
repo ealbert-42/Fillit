@@ -51,7 +51,7 @@ t_map		*ft_generate_map(t_triminos *t1)
 		i++;
 	}
 	map->position = 0;
-	map->maxposition = 0;
 	map->maxsize = ft_map_init(t1);
+	map->maxposition = (map->maxsize * map->maxsize) - 1;
 	return (map);
 }
