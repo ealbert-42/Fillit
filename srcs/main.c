@@ -12,6 +12,21 @@
 
 #include "fillit.h"
 
+
+static void	ft_print_map(char **map)
+{
+	int 	i;
+	
+	i = 0;
+	
+	while (map[i])
+	{
+		ft_putendl(map[i]);
+		i++;
+	}
+	
+}
+
 int		main(int argc, char **argv)
 {
 	int			fd;
@@ -29,11 +44,13 @@ int		main(int argc, char **argv)
 	{
 		if (ft_algo(map, t) == 1)
 		{
-			ft_putendl("Bravo");
+			ft_putendl("Success");
+			ft_print_map(map->map);
 			return (0);
 		}
 		map->maxsize++;
 	}
 	ft_error(4);
+	ft_print_map(map->map);
 	return (0);
 }

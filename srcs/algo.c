@@ -17,6 +17,8 @@ static int		ft_checkblock(t_map *map, t_triminos *t, int position)
 	int		x;
 	int		y;
 
+ft_putendl("checkblock");
+
 	x = position % map->maxsize;
 	y = position / map->maxsize;
 	if (map->map[x + t->x1][y + t->y1] == '.'
@@ -32,6 +34,8 @@ static void		ft_writeblock(t_map *map, t_triminos *t, int position)
 	int		x;
 	int		y;
 
+ft_putendl("writeblock");
+	
 	x = position % map->maxsize;
 	y = position / map->maxsize;
 	map->map[x + t->x1][y + t->y1] = t->letter;
@@ -45,6 +49,8 @@ static void		ft_clearblock(t_map *map, t_triminos *t, int position)
 	int		x;
 	int		y;
 
+ft_putendl("clearblock");
+
 	x = position % map->maxsize;
 	y = position / map->maxsize;
 	map->map[x + t->x1][y + t->y1] = '.';
@@ -55,22 +61,26 @@ static void		ft_clearblock(t_map *map, t_triminos *t, int position)
 
 int				ft_algo(t_map *map, t_triminos *t)
 {
-	map->position = 0;
+	int 	position;
+
+ft_putendl("algo");
+	
+	position = 0;
 	while (t != NULL)
 	{
-		while (map->position != map->maxposition)
+		while (position != map->maxposition)
 		{
-			if (ft_checkblock(map, t, map->position) == 1)
+			if (ft_checkblock(map, t, position) == 1)
 			{
-				ft_writeblock(map, t, map->position);
+				ft_writeblock(map, t, position);
 				if (t->next == NULL)
 					return (1);
 				if (ft_algo(map, t->next) == 1)
 					return (1);
 				else
-					ft_clearblock(map, t, map->position);
+					ft_clearblock(map, t, position);
 			}
-			map->position++;
+			position++;
 		}
 		if (map->maxsize == 12)
 			return (0);
