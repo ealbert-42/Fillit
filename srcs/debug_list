@@ -1,0 +1,17 @@
+void ft_debug_list(t_triminos *t)
+{
+	int		i;
+	t_triminos	*tmp;
+	tmp = t;
+
+	i =0;
+	while (tmp != NULL)
+	{
+		ft_putchar(tmp->letter);
+		printf(" x1:%d y1:%d x2:%d y2:%d x3:%d y3:%d x4:%d y4:%d \n", tmp->x1, tmp->y1, tmp->x2, tmp->y2, tmp->x3, tmp->y3, tmp->x4, tmp->y4);
+		tmp = tmp->next;
+		i++;
+	}
+	printf("Number of tetris:%d\n", i);
+}
+
