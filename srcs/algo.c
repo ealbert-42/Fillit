@@ -19,10 +19,14 @@ static int		ft_checkblock(t_map *map, t_triminos *t, int position)
 
 	x = position / map->maxsize;
 	y = position % map->maxsize;
-	if (map->map[x + t->x1][y + t->y1] == '.' && (x + t->x1) < map->maxsize && (y + t->y1) < map->maxsize
-		&& map->map[x + t->x2][y + t->y2] == '.' && (x + t->x2) < map->maxsize && (y + t->y2) < map->maxsize
-		&& map->map[x + t->x3][y + t->y3] == '.' && (x + t->x3) < map->maxsize && (y + t->y3) < map->maxsize
-		&& map->map[x + t->x4][y + t->y4] == '.' && (x + t->x4) < map->maxsize && (y + t->y4) < map->maxsize)
+	if (map->map[x + t->x1][y + t->y1] == '.'
+		&& (x + t->x1) < map->maxsize && (y + t->y1) < map->maxsize
+		&& map->map[x + t->x2][y + t->y2] == '.'
+		&& (x + t->x2) < map->maxsize && (y + t->y2) < map->maxsize
+		&& map->map[x + t->x3][y + t->y3] == '.'
+		&& (x + t->x3) < map->maxsize && (y + t->y3) < map->maxsize
+		&& map->map[x + t->x4][y + t->y4] == '.'
+		&& (x + t->x4) < map->maxsize && (y + t->y4) < map->maxsize)
 		return (1);
 	return (0);
 }

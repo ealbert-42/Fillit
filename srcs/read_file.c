@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 t_triminos	*ft_read_file(int fd)
 {
@@ -28,7 +27,7 @@ t_triminos	*ft_read_file(int fd)
 	{
 		buf[ret] = '\0';
 		if (!ft_valid_string(buf) || tetri > 25)
-			ft_error(2);
+			ft_error();
 		t1 = ft_save_tetri(t1, ft_trim_tetri(buf), tetri + 65);
 		tetri++;
 		ret = read(fd, &buf2, 1);
@@ -36,7 +35,7 @@ t_triminos	*ft_read_file(int fd)
 		if (buf2[0] == '\0')
 			break ;
 		else if (buf2[0] != '\n')
-			ft_error(2);
+			ft_error();
 	}
 	return (t1);
 }
