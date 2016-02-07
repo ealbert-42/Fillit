@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 11:45:59 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/02 13:21:11 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/02 18:31:20 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,18 @@ static t_triminos	*ft_initetri(t_triminos *t2, int letter)
 	return (t2);
 }
 
-t_triminos			*ft_save_tetri(t_triminos *t1, char **p, int letter)
+void				ft_save_tetri(t_triminos **t1, char **p, int letter)
 {
-	t_triminos	*t2;
+	t_triminos	*tmp;
 	int			i;
 	int			j;
 
-	if (!(t2 = (t_triminos *)malloc(sizeof(t_triminos))))
+	tmp = *t1;
+	while (tmp != NULL)
+		tmp = tmp->next;
+	if (!(tmp = (t_triminos *)malloc(sizeof(t_triminos))))
 		return (NULL);
-	t1 = t2;
-	t1 = ft_initetri(t1, letter);
+	tmp = ft_initetri(tmp, letter);
 	i = 0;
 	j = 0;
 	while (p[i] != NULL)
@@ -69,11 +71,10 @@ t_triminos			*ft_save_tetri(t_triminos *t1, char **p, int letter)
 		while (p[i][j] != '\0')
 		{
 			if (p[i][j] == '#')
-				t2 = ft_save_it(t2, i, j);
+				tmp = ft_save_it(tmp, i, j);
 			j++;
 		}
 		i++;
 		j = 0;
 	}
-	return (t1);
 }
