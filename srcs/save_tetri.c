@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 11:45:59 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/02 18:31:20 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/07 14:22:54 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,29 +52,33 @@ static t_triminos	*ft_initetri(t_triminos *t2, int letter)
 	return (t2);
 }
 
-void				ft_save_tetri(t_triminos **t1, char **p, int letter)
+t_triminos			*ft_save_tetri(t_triminos *t1, char **p, int letter)
 {
 	t_triminos	*tmp;
+	t_triminos	*new;
 	int			i;
 	int			j;
 
-	tmp = *t1;
-	while (tmp != NULL)
-		tmp = tmp->next;
-	if (!(tmp = (t_triminos *)malloc(sizeof(t_triminos))))
+	if (!(new = (t_triminos *)malloc(sizeof(t_triminos))))
 		ft_error(3);
-	tmp = ft_initetri(tmp, letter);
+	new = ft_initetri(new, letter);
 	i = 0;
-	j = 0;
 	while (p[i] != NULL)
 	{
+		j = 0;
 		while (p[i][j] != '\0')
 		{
 			if (p[i][j] == '#')
-				tmp = ft_save_it(tmp, i, j);
+				new = ft_save_it(new, i, j);
 			j++;
 		}
 		i++;
-		j = 0;
 	}
+	if (t1 == NULL)
+		return (new);
+	tmp = t1;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new;
+	return (t1);
 }
