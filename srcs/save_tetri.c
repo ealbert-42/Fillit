@@ -62,7 +62,7 @@ void				ft_save_tetri(t_triminos **t1, char **p, int letter)
 	while (tmp != NULL)
 		tmp = tmp->next;
 	if (!(tmp = (t_triminos *)malloc(sizeof(t_triminos))))
-		return (NULL);
+		ft_error(3);
 	tmp = ft_initetri(tmp, letter);
 	i = 0;
 	j = 0;

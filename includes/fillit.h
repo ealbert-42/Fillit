@@ -46,7 +46,7 @@ t_map					*ft_generate_map(t_triminos *t1);
 t_triminos				*ft_read_file(int fd);
 int						ft_valid_string(char *str);
 int						ft_algo(t_map *map, t_triminos *t);
-t_triminos				*ft_save_tetri(t_triminos *t1, char **p, int letter);
+void					ft_save_tetri(t_triminos **t1, char **p, int letter);
 char					**ft_trim_tetri(char *input);
 
 #endif
