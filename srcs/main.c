@@ -49,7 +49,6 @@ int			main(int argc, char **argv)
 	{
 		if (ft_algo(map, t) == 1)
 		{
-			ft_putendl("Success");
 			ft_print_map(map->map, map->maxsize);
 			return (0);
 		}
