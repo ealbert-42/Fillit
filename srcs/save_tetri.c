@@ -12,6 +12,17 @@
 
 #include "fillit.h"
 
+static t_triminos	*ft_return(t_triminos *t1, t_triminos *t, t_triminos *e)
+{
+	if (!t1)
+		return (e);
+	t = t1;
+	while (t->next != NULL)
+		t = t->next;
+	t->next = e;
+	return (t1);
+}
+
 static t_triminos	*ft_save_it(t_triminos *t2, int i, int j)
 {
 	if (t2->x1 == -42)
@@ -55,13 +66,14 @@ static t_triminos	*ft_initetri(t_triminos *t2, int letter)
 t_triminos			*ft_save_tetri(t_triminos *t1, char **p, int letter)
 {
 	t_triminos	*tmp;
-	t_triminos	*new;
+	t_triminos	*elem;
 	int			i;
 	int			j;
 
-	if (!(new = (t_triminos *)malloc(sizeof(t_triminos))))
-		ft_error(3);
-	new = ft_initetri(new, letter);
+	tmp = NULL;
+	if (!(elem = (t_triminos *)malloc(sizeof(t_triminos))))
+		ft_error();
+	elem = ft_initetri(elem, letter);
 	i = 0;
 	while (p[i] != NULL)
 	{
@@ -69,16 +81,10 @@ t_triminos			*ft_save_tetri(t_triminos *t1, char **p, int letter)
 		while (p[i][j] != '\0')
 		{
 			if (p[i][j] == '#')
-				new = ft_save_it(new, i, j);
+				elem = ft_save_it(elem, i, j);
 			j++;
 		}
 		i++;
 	}
-	if (t1 == NULL)
-		return (new);
-	tmp = t1;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = new;
-	return (t1);
+	return (ft_return(t1, tmp, elem));
 }

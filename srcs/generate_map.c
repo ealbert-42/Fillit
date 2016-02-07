@@ -41,13 +41,13 @@ t_map		*ft_generate_map(t_triminos *t1)
 
 	i = 0;
 	if (!(map = (t_map *)malloc(sizeof(t_map))))
-		ft_error(3);
+		ft_error();
 	if (!(map->map = (char **)malloc(sizeof(char *) * 12)))
-		ft_error(3);
+		ft_error();
 	while (i != 12)
 	{
 		if (!(map->map[i] = ft_strdup("............")))
-			ft_error(3);
+			ft_error();
 		i++;
 	}
 	map->position = 0;

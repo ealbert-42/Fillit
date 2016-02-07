@@ -12,10 +12,12 @@
 
 .PHONY : all clean fclean re
 
-COMPIL = gcc -Wall -Wextra -Werror -I ./includes/ -o fillit
+NAME 	= fillit
+
+COMPIL 	= gcc -Wall -Wextra -Werror -I ./includes/ -o fillit $<
 
 SRC = srcs/main.c \
-	  srcs/libft.a \
+	  libft/libft.a \
 	  srcs/error.c \
 	  srcs/read_file.c \
 	  srcs/valid_file.c \
@@ -24,15 +26,16 @@ SRC = srcs/main.c \
 	  srcs/trim_tetri.c \
 	  srcs/save_tetri.c
 
-all :
-	make -C ./libft
-	cp libft/libft.a ./srcs/
-	$(COMPIL) $(SRC)
+all: $(NAME)
 
-clean :
-	rm -rf fillit
+$(NAME):
+	@make -C ./libft
+	@$(COMPIL) $(SRC)
 
-fclean : clean
-	make fclean -C ./libft
+clean:
+	@rm -rf fillit
 
-re : fclean all
+fclean: clean
+	@make fclean -C ./libft
+	
+re: fclean all

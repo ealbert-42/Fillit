@@ -41,7 +41,7 @@ typedef struct			s_triminos
 	struct s_triminos	*next;
 }						t_triminos;
 
-void					ft_error(int n);
+void					ft_error(void);
 t_map					*ft_generate_map(t_triminos *t1);
 t_triminos				*ft_read_file(int fd);
 int						ft_valid_string(char *str);

@@ -18,9 +18,9 @@ static void	ft_print_map(char **map, int maxsize)
 	int		j;
 
 	i = 0;
-	while (i <= maxsize)
+	while (i < maxsize)
 	{
-		while (j <= maxsize)
+		while (j < maxsize)
 		{
 			ft_putchar(map[i][j]);
 			j++;
@@ -38,10 +38,11 @@ int			main(int argc, char **argv)
 	t_map		*map;
 
 	if (argc != 2)
-		ft_error(0);
+		ft_error();
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
-		ft_error(1);
-	t = ft_read_file(fd);
+		ft_error();
+	if ((t = ft_read_file(fd)) == NULL)
+		ft_error();
 	close(fd);
 	map = ft_generate_map(t);
 	while (map->maxsize != 13)
@@ -54,6 +55,6 @@ int			main(int argc, char **argv)
 		}
 		map->maxsize++;
 	}
-	ft_error(4);
+	ft_error();
 	return (0);
 }

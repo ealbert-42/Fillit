@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "fillit.h"
-#include <stdio.h>
+#include "fillit.h"
 
 static int	ft_nb_diez(char *s, int i)
 {
