@@ -29,11 +29,12 @@ SRC = srcs/main.c \
 all: $(NAME)
 
 $(NAME):
-	make re -C ./libft
+	make -C ./libft
 	$(COMPIL) $(SRC)
 
 clean:
-	rm fillit
+	rm -rf fillit
+	make clean -C ./libft
 
 fclean: clean
 	make fclean -C ./libft
