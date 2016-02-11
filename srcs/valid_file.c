@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:56:50 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/02 12:29:18 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/11 11:48:41 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int			ft_valid_string(char *str)
 	nbdiez = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '\n')
+		if (str[i] == '\n' && i % 5 == 4)
 			line++;
 		else if (str[i] == '#')
 			nbdiez += ft_nb_diez(str, i);
@@ -38,7 +38,7 @@ int			ft_valid_string(char *str)
 			return (0);
 		i++;
 	}
-	if (i != 20 || nbdiez != 4 || line != 4)
+	if (i != 20 || nbdiez != 4 || line != 4 || str[19] != '\n')
 		return (0);
 	return (1);
 }
