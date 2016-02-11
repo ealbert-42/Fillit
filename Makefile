@@ -6,7 +6,7 @@
 #    By: ealbert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/14 14:46:35 by ealbert           #+#    #+#              #
-#    Updated: 2016/02/02 12:25:19 by ealbert          ###   ########.fr        #
+#    Updated: 2016/02/11 16:28:31 by ealbert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME 	= fillit
 
-COMPIL 	= gcc -Wall -Wextra -Werror -I ./includes/ -o fillit $<
+COMPIL 	= gcc -Wall -Wextra -Werror -I ./includes/ -o fillit
 
 SRC = srcs/main.c \
 	  libft/libft.a \
@@ -29,13 +29,13 @@ SRC = srcs/main.c \
 all: $(NAME)
 
 $(NAME):
-	@make -C ./libft
-	@$(COMPIL) $(SRC)
+	make re -C ./libft
+	$(COMPIL) $(SRC)
 
 clean:
-	@rm -rf fillit
+	rm fillit
 
 fclean: clean
-	@make fclean -C ./libft
+	make fclean -C ./libft
 	
 re: fclean all

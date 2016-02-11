@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:40:42 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/07 15:16:20 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/11 11:56:49 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	ft_print_map(char **map, int maxsize)
 	i = 0;
 	while (i < maxsize)
 	{
+		j = 0;
 		while (j < maxsize)
 		{
 			ft_putchar(map[i][j]);
@@ -27,7 +28,6 @@ static void	ft_print_map(char **map, int maxsize)
 		}
 		ft_putchar('\n');
 		i++;
-		j = 0;
 	}
 }
 

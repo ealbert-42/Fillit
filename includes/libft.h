@@ -6,7 +6,7 @@
 /*   By: ealbert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:48:14 by ealbert           #+#    #+#             */
-/*   Updated: 2015/12/28 16:16:17 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/11 16:56:58 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct			s_list
+typedef struct	s_list
 {
-	void	*content;
-	size_t	content_size;
-	struct	s_list *next;
-}						t_list;
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
 
 char			*ft_lowstr(char *str);
 char			*ft_uppstr(char *str);
