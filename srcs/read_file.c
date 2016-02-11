@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/11 12:00:58 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/11 15:03:50 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/11 17:49:56 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_triminos	*ft_read_file(int fd)
 		tetri = tetri + 1;
 		ret = read(fd, &buf2, 1);
 		buf2[1] = '\0';
-		if (buf2[0] != '\n')
+		if (buf2[0] != '\n' && ret != 0)
 			ft_error();
 	}
 	return (t1);

@@ -6,12 +6,11 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:56:50 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/11 16:25:00 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/11 17:49:45 by ealbert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 static int	ft_nb_diez(char *s, int i)
 {
@@ -22,7 +21,7 @@ static int	ft_nb_diez(char *s, int i)
 	{
 		if (s[i + j] == '#')
 		{
-			if (j == 1 || j == 5)
+			if ((j == 1 || j == 5) || (j == 4 && s[i - 1] == 35))
 				return (1);
 			return (-42);
 		}
@@ -42,7 +41,7 @@ int			ft_valid_string(char *str)
 	nbdiez = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '\n' && i % 5 == 4)
+		if (str[i] == '\n')
 			line++;
 		else if (str[i] == '#')
 			nbdiez += ft_nb_diez(str, i);
