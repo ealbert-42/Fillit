@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/22 15:35:42 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/07 14:22:11 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/13 17:46:13 by shill            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct			s_triminos
 }						t_triminos;
 
 void					ft_error(void);
+void					ft_usage(void);
 t_map					*ft_generate_map(t_triminos *t1);
 t_triminos				*ft_read_file(int fd);
 int						ft_valid_string(char *str);
