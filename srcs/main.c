@@ -6,7 +6,7 @@
 /*   By: ealbert <ealbert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 15:40:42 by ealbert           #+#    #+#             */
-/*   Updated: 2016/02/11 11:56:49 by ealbert          ###   ########.fr       */
+/*   Updated: 2016/02/13 17:45:53 by shill            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int			main(int argc, char **argv)
 	t_map		*map;
 
 	if (argc != 2)
-		ft_error();
+		ft_usage();
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
 		ft_error();
 	if ((t = ft_read_file(fd)) == NULL)
@@ -53,6 +53,7 @@ int			main(int argc, char **argv)
 			return (0);
 		}
 		map->maxsize++;
+		map->maxposition = (map->maxsize * map->maxsize) - 1;
 	}
 	ft_error();
 	return (0);
