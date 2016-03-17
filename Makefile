@@ -6,7 +6,7 @@
 #    By: ealbert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/14 14:46:35 by ealbert           #+#    #+#              #
-#    Updated: 2016/02/11 16:28:31 by ealbert          ###   ########.fr        #
+#    Updated: 2016/03/11 18:29:20 by ealbert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME 	= fillit
 COMPIL 	= gcc -Wall -Wextra -Werror -I ./includes/ -o fillit
 
 SRC = srcs/main.c \
-	  libft/libft.a \
+	  LIBFT/libft.a \
 	  srcs/error.c \
 	  srcs/read_file.c \
 	  srcs/valid_file.c \
@@ -29,14 +29,17 @@ SRC = srcs/main.c \
 all: $(NAME)
 
 $(NAME):
-	make -C ./libft
-	$(COMPIL) $(SRC)
+	@echo "\033[33;33m~~~FILLIT : Compilation...\033[0m"
+	@make -C ./LIBFT
+	@$(COMPIL) $(SRC)
+	@echo "\033[33;32m~~~FILLIT : Done.\033[0m"
 
 clean:
-	rm -rf fillit
-	make clean -C ./libft
+	@rm -rf fillit
+	@make clean -C ./LIBFT
+	@echo "\033[33;32m~~~FILLIT : Executable successfully removed.\033[0m"
 
 fclean: clean
-	make fclean -C ./libft
-	
+	@make fclean -C ./LIBFT
+
 re: fclean all
